@@ -1,0 +1,18 @@
+{
+    "navigationFallback": {
+        "rewrite": "/index.html",
+        "exclude": ["/assets/*"]
+    },
+    "routes": [
+        {
+            "route": "/assets/*",
+            "headers": {
+                "cache-control": "public, max-age=31536000, immutable"
+            }
+        }
+    ],
+    "globalHeaders": {
+        "Permissions-Policy": "midi=(self)",
+        "X-Content-Type-Options": "nosniff"
+    }
+}

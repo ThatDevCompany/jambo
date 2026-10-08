@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: jambo
+services:
+    web:
+        project: .
+        language: js
+        host: staticwebapp
+        # azd runs `npm install` and `npm run build`, then deploys this folder.
+        dist: dist

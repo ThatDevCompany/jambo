@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#0e0f14" />
+        <title>Jambo</title>
+    </head>
+    <body>
+        <header class="toolbar">
+            <div class="brand">Jambo</div>
+            <label class="field">
+                <span>Input</span>
+                <select id="input-select"></select>
+            </label>
+            <!-- Mock mode only. The real piano makes its own sound, so Jambo stays silent for live playing. -->
+            <div id="mock-controls" class="group">
+                <button id="play-button" class="button" type="button">Play</button>
+                <label class="field">
+                    <span>Tempo</span>
+                    <input id="tempo" type="range" min="40" max="180" step="1" />
+                    <output id="tempo-value"></output>
+                </label>
+                <button id="sound-button" class="button" type="button" aria-pressed="false">Sound off</button>
+                <label class="field">
+                    <span>Left</span>
+                    <select id="left-instrument"></select>
+                </label>
+                <label class="field">
+                    <span>Right</span>
+                    <select id="right-instrument"></select>
+                </label>
+            </div>
+            <span id="status" class="status"></span>
+        </header>
+
+        <main class="stage">
+            <canvas id="roll" class="roll"></canvas>
+            <div class="readout">
+                <div id="chord" class="chord">&nbsp;</div>
+                <div id="notes" class="notes">&nbsp;</div>
+                <div id="pedal" class="pedal">Pedal</div>
+            </div>
+        </main>
+
+        <canvas id="keyboard" class="keyboard"></canvas>
+
+        <footer class="hint">
+            Computer keys: <kbd>A</kbd>–<kbd>;</kbd> play (<kbd>W</kbd> <kbd>E</kbd> <kbd>T</kbd> <kbd>Y</kbd>
+            <kbd>U</kbd> are black keys) · <kbd>Z</kbd>/<kbd>X</kbd> octave · <kbd>Space</kbd> sustain · or touch the
+            keys
+        </footer>
+
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
